@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS Assets
     CONSTRAINT fk_Units
         FOREIGN KEY (UnitId)
             REFERENCES Units(Id)
-            on DELETE restrict
+            on DELETE cascade
 );
 
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS Assets
 
 CREATE TABLE IF NOT EXISTS AssetLiveStatus
 (
-    AssetId           INT AUTO_INCREMENT PRIMARY KEY,
+    AssetId           INT PRIMARY KEY,
     AssetType VARCHAR(100) NOT null,
     RawValue  VARCHAR(100) NOT NULL,
     ProcessedStatus  VARCHAR(100) NOT NULL,

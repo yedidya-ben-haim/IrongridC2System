@@ -1,4 +1,4 @@
-namespace Producer.Models;
+namespace Consumer.Models;
 
 public class AssetLiveReport
 {

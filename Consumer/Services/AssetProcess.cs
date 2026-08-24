@@ -2,7 +2,6 @@ using Consumer.Data;
 using Consumer.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Win32;
-using Producer.Models;
 
 namespace Consumer.Services;
 

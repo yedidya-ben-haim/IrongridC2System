@@ -23,7 +23,7 @@ services:
     container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: testDb
+      MYSQL_DATABASE: irongrid_db
     ports:
      - "3306:3306"
 

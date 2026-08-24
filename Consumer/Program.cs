@@ -1,11 +1,11 @@
 ﻿using System.Text.Json;
 using Confluent.Kafka;
 using Consumer.Data;
+using Consumer.Models;
 using Consumer.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Producer.Models;
 
 
 var configuration = new ConfigurationBuilder()

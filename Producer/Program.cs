@@ -7,7 +7,6 @@ var dataLoader = new LoadDataFromJson();
 
 var objList = dataLoader.LoadData("Input/field_reports.json");
 
-
 var config = new ProducerConfig
 {
     BootstrapServers = "localhost:9092",
