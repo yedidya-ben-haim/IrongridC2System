@@ -1,5 +1,8 @@
 using ApiDashboard.Data;
+using ApiDashboard.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +20,9 @@ var connectionString =
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+// builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
+// builder.Services.AddSingleton<IrongridRedisService>();
 
 var app = builder.Build();
 
