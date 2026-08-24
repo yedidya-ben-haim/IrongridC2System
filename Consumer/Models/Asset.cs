@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Consumer.Models;
 
-public class Assets
+public class Asset
 {
     public int Id { get; set; }
 
@@ -14,5 +14,8 @@ public class Assets
 
     public int UnitId { get; set; }
     
-    public Uin
+    public Unit Unit { get; set; }
+    
+    public AssetLiveStatus AssetLiveStatus { get; set; }
+
 }

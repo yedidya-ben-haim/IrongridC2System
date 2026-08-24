@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Consumer.Models;
 
-public class Units
+public class Unit
 {
     public int Id { get; set; }
 
@@ -11,6 +11,6 @@ public class Units
 
     [StringLength(100)]
     public string Sector { get; set; } = "General";
-    
-    public ICollection<Asset> Assets { get; set; }
+
+    public ICollection<Asset> Assets { get; set; } = new List<Asset>();
 }
