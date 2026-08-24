@@ -21,8 +21,12 @@ var connectionString =
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
-// builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
-// builder.Services.AddSingleton<IrongridRedisService>();
+ConfigurationOptions conf = new ConfigurationOptions {
+    EndPoints = { "localhost:6379" }
+};
+ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(conf);
+IDatabase db = redis.GetDatabase();
+
 
 var app = builder.Build();
 
