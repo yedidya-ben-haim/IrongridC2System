@@ -11,12 +11,11 @@ namespace ApiDashboard.Controllers;
 public class AssetsStatusController : ControllerBase
 {
     private readonly AppDbContext _context;
-    private readonly IrongridRedisService _cache;
+    // private readonly IrongridRedisService _cache;
 
-    public AssetsStatusController(AppDbContext context, IrongridRedisService cache)
+    public AssetsStatusController(AppDbContext context)
     {
         _context = context;
-        _cache = cache;
     }
     
     //GET `/api/assets-status`
@@ -94,11 +93,11 @@ public class AssetsStatusController : ControllerBase
 
     }
 
-    [HttpGet("save/{id}")]
-    public async Task<ActionResult<string>> Save(int id)
-    {
-        var asset = await _context.Assets.FirstOrDefaultAsync(a => a.Id == id);
-        await _cache.SaveAsync(id, asset);
-        return Ok("save");
-    }
+    // [HttpGet("save/{id}")]
+    // public async Task<ActionResult<string>> Save(int id)
+    // {
+    //     var asset = await _context.Assets.FirstOrDefaultAsync(a => a.Id == id);
+    //     await _cache.SaveAsync(id, asset);
+    //     return Ok("save");
+    // }
 }
